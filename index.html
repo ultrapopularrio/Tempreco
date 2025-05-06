@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido Rápido - Drogaria Ultra Popular</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,13 +15,22 @@
         ::placeholder { color: #9ca3af; opacity: 1; }
         :-ms-input-placeholder { color: #9ca3af; }
         ::-ms-input-placeholder { color: #9ca3af; }
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
     </style>
 </head>
 <body class="bg-red-600 text-gray-100">
 
     <div class="container mx-auto p-4 md:p-8 max-w-3xl">
         <header class="text-center mb-8 py-4">
-             <img src="img/LogoUltra.jpg" alt="Logo Drogaria Ultra Popular" class="mx-auto mb-4 h-24 md:h-32" onerror="this.style.display='none'">
+             <img src="https://github.com/ultrapopularrio/ultrario1/blob/main/Logo/logoultra.jpg?raw=true" alt="Logo Drogaria Ultra Popular" class="mx-auto mb-4 h-24 md:h-32" onerror="this.style.display='none'">
              <p class="mt-2 text-lg">Monte seu pedido abaixo e envie pelo WhatsApp!</p>
         </header>
 
@@ -32,16 +39,15 @@
             <div class="space-y-6">
 
                 <div class="product-item flex flex-col sm:flex-row items-center border border-gray-200 rounded-md p-3 gap-4 bg-gray-50">
-                    <img src="img/fraudaampers.jpg" alt="Fraldas Pampers Confort Sec" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
+                    <img src="https://placehold.co/100x100/e2e8f0/4a5568?text=Fralda+Pampers" alt="Fraldas Pampers Confort Sec" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
                     <div class="flex-grow text-center sm:text-left">
                         <h3 class="font-semibold text-gray-700" data-product-name="Fraldas Pampers Confort Sec P. Eco">Fraldas Pampers Confort Sec P. Eco</h3>
-                        <!-- Preço alterado para verde -->
                         <p class="text-green-600 font-bold text-lg" data-product-price="54.99">R$ 54,99</p>
                     </div>
-                    <div class="flex flex-col sm:flex-row items-center flex-shrink-0 mt-2 sm:mt-0 gap-2 sm:gap-4">
+                    <div class="flex flex-col sm:flex-row items-center flex-shrink-0 mt-2 sm:mt-0 gap-3">
                         <div>
                             <label for="size-fralda01" class="sr-only">Tamanho:</label>
-                            <select id="size-fralda01" name="size-fralda01" class="product-size border border-gray-300 rounded-md shadow-sm px-3 py-1 focus:ring-red-500 focus:border-red-500 bg-white">
+                            <select id="size-fralda01" name="size-fralda01" class="product-size border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-red-500 focus:border-red-500 bg-white h-10">
                                 <option value="" disabled selected>Tamanho...</option>
                                 <option value="P">P</option>
                                 <option value="M">M</option>
@@ -51,76 +57,75 @@
                             </select>
                         </div>
                         <div class="flex items-center">
-                            <label for="qty-fralda01" class="text-sm font-medium text-gray-600 mr-2">Qtd:</label>
+                            <button type="button" class="quantity-minus p-2 border border-gray-300 rounded-l-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">-</button>
                             <input type="number" id="qty-fralda01" name="qty-fralda01" min="0" value="0"
-                                   class="product-quantity w-16 border border-gray-300 rounded-md shadow-sm px-2 py-1 text-center focus:ring-red-500 focus:border-red-500"
-                                   data-product-id="fralda01">
+                                   class="product-quantity w-12 border-t border-b border-gray-300 text-center focus:ring-red-500 focus:border-red-500 h-10 text-base"
+                                   data-product-id="fralda01" readonly>
+                            <button type="button" class="quantity-plus p-2 border border-gray-300 rounded-r-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">+</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-item flex flex-col sm:flex-row items-center border border-gray-200 rounded-md p-3 gap-4 bg-gray-50">
-                    <img src="img/Lencohuggies.jpg" alt="Lenços Umedecidos Huggies Max Clean 48 un" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
+                    <img src="https://placehold.co/100x100/e2e8f0/4a5568?text=Lenço+Huggies" alt="Lenços Umedecidos Huggies Max Clean 48 un" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
                     <div class="flex-grow text-center sm:text-left">
                         <h3 class="font-semibold text-gray-700" data-product-name="Lenços Umedecidos Huggies Max Clean 48 un">Lenços Umedecidos Huggies Max Clean 48 un</h3>
-                        <!-- Preço alterado para verde -->
                         <p class="text-green-600 font-bold text-lg" data-product-price="9.90">R$ 9,90</p>
                     </div>
                     <div class="flex items-center flex-shrink-0 mt-2 sm:mt-0">
-                        <label for="qty-lenco01" class="text-sm font-medium text-gray-600 mr-2">Qtd:</label>
+                        <button type="button" class="quantity-minus p-2 border border-gray-300 rounded-l-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">-</button>
                         <input type="number" id="qty-lenco01" name="qty-lenco01" min="0" value="0"
-                               class="product-quantity w-16 border border-gray-300 rounded-md shadow-sm px-2 py-1 text-center focus:ring-red-500 focus:border-red-500"
-                               data-product-id="lenco01">
+                               class="product-quantity w-12 border-t border-b border-gray-300 text-center focus:ring-red-500 focus:border-red-500 h-10 text-base"
+                               data-product-id="lenco01" readonly>
+                        <button type="button" class="quantity-plus p-2 border border-gray-300 rounded-r-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">+</button>
                     </div>
                 </div>
 
                  <div class="product-item flex flex-col sm:flex-row items-center border border-gray-200 rounded-md p-3 gap-4 bg-gray-50">
-                    <img src="img/Leitninho.jpg" alt="Leite Ninho Fases 1+ Lata 800g" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
+                    <img src="https://placehold.co/100x100/e2e8f0/4a5568?text=Leite+Ninho" alt="Leite Ninho Fases 1+ Lata 800g" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
                     <div class="flex-grow text-center sm:text-left">
                         <h3 class="font-semibold text-gray-700" data-product-name="Leite Ninho Fases 1+ Lata 800g">Leite Ninho Fases 1+ Lata 800g</h3>
                          <p class="text-sm text-gray-500 line-through">R$ 45,50</p>
-                        <!-- Preço alterado para verde -->
                         <p class="text-green-600 font-bold text-lg" data-product-price="38.90">R$ 38,90</p>
                     </div>
                     <div class="flex items-center flex-shrink-0 mt-2 sm:mt-0">
-                        <label for="qty-leite01" class="text-sm font-medium text-gray-600 mr-2">Qtd:</label>
+                        <button type="button" class="quantity-minus p-2 border border-gray-300 rounded-l-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">-</button>
                         <input type="number" id="qty-leite01" name="qty-leite01" min="0" value="0"
-                               class="product-quantity w-16 border border-gray-300 rounded-md shadow-sm px-2 py-1 text-center focus:ring-red-500 focus:border-red-500"
-                               data-product-id="leite01">
+                               class="product-quantity w-12 border-t border-b border-gray-300 text-center focus:ring-red-500 focus:border-red-500 h-10 text-base"
+                               data-product-id="leite01" readonly>
+                        <button type="button" class="quantity-plus p-2 border border-gray-300 rounded-r-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">+</button>
                     </div>
                 </div>
 
                 <div class="product-item flex flex-col sm:flex-row items-center border border-gray-200 rounded-md p-3 gap-4 bg-gray-50">
-                     <img src="img/Dorflex,jpg.png" alt="Dorflex Caixa 10 comprimidos" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
+                     <img src="https://placehold.co/100x100/e2e8f0/4a5568?text=Dorflex" alt="Dorflex Caixa 10 comprimidos" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
                     <div class="flex-grow text-center sm:text-left">
                         <h3 class="font-semibold text-gray-700" data-product-name="Dorflex Cx 10 comp">Dorflex Caixa 10 comprimidos</h3>
-                        <!-- Preço alterado para verde -->
                         <p class="text-green-600 font-bold text-lg" data-product-price="5.50">R$ 5,50</p>
                     </div>
                     <div class="flex items-center flex-shrink-0 mt-2 sm:mt-0">
-                        <label for="qty-dorflex01" class="text-sm font-medium text-gray-600 mr-2">Qtd:</label>
+                        <button type="button" class="quantity-minus p-2 border border-gray-300 rounded-l-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">-</button>
                         <input type="number" id="qty-dorflex01" name="qty-dorflex01" min="0" value="0"
-                               class="product-quantity w-16 border border-gray-300 rounded-md shadow-sm px-2 py-1 text-center focus:ring-red-500 focus:border-red-500"
-                               data-product-id="dorflex01">
+                               class="product-quantity w-12 border-t border-b border-gray-300 text-center focus:ring-red-500 focus:border-red-500 h-10 text-base"
+                               data-product-id="dorflex01" readonly>
+                        <button type="button" class="quantity-plus p-2 border border-gray-300 rounded-r-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">+</button>
                     </div>
                 </div>
 
                 <div class="product-item flex flex-col sm:flex-row items-center border border-gray-200 rounded-md p-3 gap-4 bg-gray-50">
-                     <img src="img/Dipirona.jpg" alt="Dipirona Sódica Gotas 20ml Genérico" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
+                     <img src="https://placehold.co/100x100/e2e8f0/4a5568?text=Dipirona+Gotas" alt="Dipirona Sódica Gotas 20ml Genérico" class="w-20 h-20 object-cover rounded flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/100x100/e2e8f0/4a5568?text=Img';">
                     <div class="flex-grow text-center sm:text-left">
                         <h3 class="font-semibold text-gray-700" data-product-name="Dipirona Sódica Gotas 20ml Genérico">Dipirona Sódica Gotas 20ml Genérico</h3>
-                        <!-- Preço alterado para verde -->
                         <p class="text-green-600 font-bold text-lg" data-product-price="4.80">R$ 4,80</p>
                     </div>
                     <div class="flex items-center flex-shrink-0 mt-2 sm:mt-0">
-                        <label for="qty-dipirona01" class="text-sm font-medium text-gray-600 mr-2">Qtd:</label>
+                        <button type="button" class="quantity-minus p-2 border border-gray-300 rounded-l-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">-</button>
                         <input type="number" id="qty-dipirona01" name="qty-dipirona01" min="0" value="0"
-                               class="product-quantity w-16 border border-gray-300 rounded-md shadow-sm px-2 py-1 text-center focus:ring-red-500 focus:border-red-500"
-                               data-product-id="dipirona01">
+                               class="product-quantity w-12 border-t border-b border-gray-300 text-center focus:ring-red-500 focus:border-red-500 h-10 text-base"
+                               data-product-id="dipirona01" readonly>
+                        <button type="button" class="quantity-plus p-2 border border-gray-300 rounded-r-md bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 focus:ring-offset-gray-50 h-10 w-10 flex items-center justify-center text-lg font-bold text-gray-700">+</button>
                     </div>
                 </div>
-
-        
             </div>
         </section>
 
@@ -189,7 +194,6 @@
 
         <section id="total-section" class="mt-8 mb-6 text-right bg-white p-4 rounded-lg shadow text-gray-800">
             <h3 class="text-xl font-semibold">Total do Pedido (Itens da Lista):</h3>
-             <!-- Total alterado para verde -->
             <p id="total-pedido-valor" class="text-2xl font-bold text-green-600 mt-1">R$ 0,00</p>
             <p class="text-xs text-gray-500 mt-1">(+ itens adicionais, se houver. Valor sujeito a confirmação e taxa de entrega, se aplicável)</p>
         </section>
@@ -206,10 +210,8 @@
              <p>Endereço: Av. Governador Leonel de Moura Brizola, Lote 10 Quadra A</p>
              <p class="mt-4 text-xs text-gray-200">Ofertas válidas enquanto durarem os estoques. Imagens meramente ilustrativas.</p>
         </footer>
-
     </div>
 
-    <!-- Script JavaScript (sem alterações) -->
     <script>
         const WHATSAPP_NUMBER = "5521975974372";
         const paymentSelect = document.getElementById('payment-method');
@@ -222,11 +224,10 @@
         });
 
         const totalDisplayElement = document.getElementById('total-pedido-valor');
-        const quantityInputs = document.querySelectorAll('.product-quantity');
 
         function calcularEAtualizarTotal() {
             let totalGeral = 0;
-            quantityInputs.forEach(input => {
+            document.querySelectorAll('.product-quantity').forEach(input => {
                 const quantidade = parseInt(input.value) || 0;
                 if (quantidade > 0) {
                     const productItemDiv = input.closest('.product-item');
@@ -237,18 +238,44 @@
                     }
                 }
             });
-            totalDisplayElement.textContent = R$ ${totalGeral.toFixed(2).replace('.', ',')};
+            totalDisplayElement.textContent = `R$ ${totalGeral.toFixed(2).replace('.', ',')}`;
         }
 
-        quantityInputs.forEach(input => {
-            input.addEventListener('input', calcularEAtualizarTotal);
+        function inicializarControlesQuantidade() {
+            document.querySelectorAll('.product-item').forEach(itemContainer => {
+                const inputQty = itemContainer.querySelector('.product-quantity');
+                const btnMinus = itemContainer.querySelector('.quantity-minus');
+                const btnPlus = itemContainer.querySelector('.quantity-plus');
+
+                if (!inputQty || !btnMinus || !btnPlus) return;
+
+                btnMinus.addEventListener('click', () => {
+                    let currentValue = parseInt(inputQty.value) || 0;
+                    if (currentValue > 0) {
+                        inputQty.value = currentValue - 1;
+                        inputQty.dispatchEvent(new Event('input', { bubbles: true }));
+                    }
+                });
+
+                btnPlus.addEventListener('click', () => {
+                    let currentValue = parseInt(inputQty.value) || 0;
+                    inputQty.value = currentValue + 1;
+                    inputQty.dispatchEvent(new Event('input', { bubbles: true }));
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.product-quantity').forEach(input => {
+                 input.addEventListener('input', calcularEAtualizarTotal);
+            });
+            calcularEAtualizarTotal();
+            inicializarControlesQuantidade();
         });
 
-        document.addEventListener('DOMContentLoaded', calcularEAtualizarTotal);
-
         function enviarPedidoWhatsApp() {
-            let mensagem = "🛒 Novo Pedido - Drogaria Ultra Popular 🛒\n\n";
-            mensagem += "Itens Selecionados (Lista):\n";
+            let mensagem = "🛒 *Novo Pedido - Drogaria Ultra Popular* 🛒\n\n";
+            mensagem += "*Itens Selecionados (Lista):*\n";
             let algumItemSelecionado = false;
             let erroValidacaoProduto = null;
             let subTotalCalculado = 0;
@@ -267,7 +294,7 @@
                     if (sizeSelect) {
                         productSize = sizeSelect.value;
                         if (!productSize) {
-                            erroValidacaoProduto = Por favor, selecione o tamanho para: ${productName};
+                            erroValidacaoProduto = `Por favor, selecione o tamanho para: ${productName}`;
                             sizeSelect.classList.add('border-red-500', 'ring-red-500');
                             sizeSelect.focus();
                             return;
@@ -276,9 +303,9 @@
                         }
                     }
                      subTotalCalculado += quantidade * productPrice;
-                    let itemString = - ${quantidade}x ${productName};
-                    if (productSize) itemString +=  - Tam ${productSize};
-                    itemString +=  (R$ ${productPrice.toFixed(2).replace('.', ',')})\n;
+                    let itemString = `- ${quantidade}x ${productName}`;
+                    if (productSize) itemString += ` - Tam ${productSize}`;
+                    itemString += ` (R$ ${productPrice.toFixed(2).replace('.', ',')})\n`;
                     mensagem += itemString;
                 }
             });
@@ -289,12 +316,15 @@
             const outrosProdutos = document.getElementById('other-products').value.trim();
             if (!algumItemSelecionado && !outrosProdutos) {
                 alert("Por favor, selecione a quantidade de pelo menos um produto da lista ou descreva o produto que deseja no campo adicional.");
-                if (!algumItemSelecionado) document.querySelector('.product-quantity')?.focus();
-                else document.getElementById('other-products').focus();
+                if (!algumItemSelecionado && document.querySelector('.product-quantity')) {
+                     document.querySelector('.product-quantity').focus();
+                } else if (document.getElementById('other-products')) {
+                     document.getElementById('other-products').focus();
+                }
                 return;
             }
             if (algumItemSelecionado){
-                 mensagem += \n*Subtotal (Itens da Lista): R$ ${subTotalCalculado.toFixed(2).replace('.', ',')}*\n;
+                 mensagem += `\n*Subtotal (Itens da Lista): R$ ${subTotalCalculado.toFixed(2).replace('.', ',')}*\n`;
             }
 
             mensagem += "\n*Dados do Cliente:*\n";
@@ -318,26 +348,25 @@
                  else if (!pagamento) document.getElementById('payment-method').focus();
                 return;
             }
-            mensagem += Nome: ${nome}\n;
-            mensagem += Telefone: ${telefone}\n;
-            mensagem += Endereço: ${rua}, Nº ${numero};
-            if (complemento) mensagem += , ${complemento};
-            mensagem +=  - Bairro: ${bairro}\n;
-            if (referencia) mensagem += Referência: ${referencia}\n;
+            mensagem += `Nome: ${nome}\n`;
+            mensagem += `Telefone: ${telefone}\n`;
+            mensagem += `Endereço: ${rua}, Nº ${numero}`;
+            if (complemento) mensagem += `, ${complemento}`;
+            mensagem += ` - Bairro: ${bairro}\n`;
+            if (referencia) mensagem += `Referência: ${referencia}\n`;
             if (outrosProdutos) {
                 mensagem += "\n*Produtos Adicionais Solicitados (Verificar disponibilidade/preço):*\n";
-                mensagem += ${outrosProdutos}\n;
+                mensagem += `${outrosProdutos}\n`;
             }
-            mensagem += \n*Pagamento:* ${pagamento}\n;
-            if (pagamento === 'Dinheiro' && troco) mensagem += Precisa de troco para: ${troco}\n;
+            mensagem += `\n*Pagamento:* ${pagamento}\n`;
+            if (pagamento === 'Dinheiro' && troco) mensagem += `Precisa de troco para: ${troco}\n`;
             mensagem += "\n*Aguardando confirmação.*";
 
             const encodedMessage = encodeURIComponent(mensagem);
-            const whatsappURL = https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage};
+            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
         }
     </script>
 
 </body>
 </html>
-
